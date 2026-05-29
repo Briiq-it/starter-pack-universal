@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!--
+  Briiq Template Catalog conventions:
+  - Each <section class="slide"> available for addSlide gets:
+    - data-briiq-layout-id="<unique-id>"
+    - data-briiq-intent="<short description>"
+    - data-briiq-keywords="comma, separated, list"
+    - data-briiq-arity="<integer, slot multiplicity hint>"
+  - Each element with replaceable content gets:
+    - data-briiq-slot="<slot-id>" (e.g., "eyebrow", "step[1].t")
+    - data-briiq-slot-max="<int max chars>" (optional)
+  - Slots not annotated stay as authored text (no substitution).
+  - build-catalog.mjs auto-extracts → templates/catalog.json (catalog v1).
+-->
+<meta charset="UTF-8" />
+<title>Catálogo de layouts · Briiq Slides</title>
+<link rel="stylesheet" href="../ds/tokens.css" />
+<link rel="stylesheet" href="../ds/components.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<script src="deck-stage.js"></script>
+</head>
+<body>
+
+  <deck-stage>
+
+    <!-- ════════════════════════════════════════════════════════════
+         Capas
+         ════════════════════════════════════════════════════════════ -->
+
+    <!-- Capa principal ================================================= -->
+    <section class="slide bg-brand s-cover" data-screen-label="Capa" data-category="cover"
+      data-briiq-layout-id="capa"
+      data-briiq-intent="Capa de apresentação, com título principal"
+      data-briiq-keywords="capa, capa de apresentação, título principal, slide inicial, cover, abertura, primeira lâmina"
+      data-briiq-arity="1">
+      <div class="brand-mark">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Sua Marca</span>
+      </div>
+
+      <div class="push">
+        <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Apresentação · <span class="placeholder">[Ano]</span></p>
+        <h1 class="display" data-briiq-slot="h1" data-briiq-slot-max="60">Título principal.<br/>Em duas linhas.</h1>
+      </div>
+
+      <div class="meta-row">
+        <span>Tema um</span>
+        <span class="dot"></span>
+        <span>Tema dois</span>
+        <span class="dot"></span>
+        <span>Tema três</span>
+      </div>
+    </section>
+
+    <!-- Capa · minimalista ============================================= -->
+    <section class="slide bg-brand s-cover" data-screen-label="Capa · minimalista" data-category="cover"
+      data-briiq-layout-id="capa-minimalista"
+      data-briiq-intent="Capa minimalista, foco no título"
+      data-briiq-keywords="capa minimalista, capa simples, título limpo, cover clean, abertura minimalista, sem ornamento"
+      data-briiq-arity="1">
+      <div class="brand-mark">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Sua Marca</span>
+      </div>
+
+      <div class="push">
+        <h1 class="display" data-briiq-slot="h1" data-briiq-slot-max="60">Título principal,<br/>sem ornamento.</h1>
+        <p class="eyebrow" style="margin-top: 24px;" data-briiq-slot="eyebrow" data-briiq-slot-max="25"><span class="placeholder">[Ano]</span></p>
+      </div>
+    </section>
+
+    <!-- Capa · com imagem ============================================== -->
+    <section class="slide bg-base s-cover" data-screen-label="Capa · com imagem" data-category="cover"
+      data-briiq-layout-id="capa-com-imagem"
+      data-briiq-intent="Capa com imagem grande lateral"
+      data-briiq-keywords="capa com imagem, cover hero, capa foto, capa visual, abertura com imagem, slide inicial com foto"
+      data-briiq-arity="1">
+      <div class="brand-mark">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Sua Marca</span>
+      </div>
+
+      <div class="case-grid">
+        <div class="copy">
+          <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Apresentação · <span class="placeholder">[Ano]</span></p>
+          <h1 class="display" style="max-width: 11ch;" data-briiq-slot="h1" data-briiq-slot-max="60">Título com hero ao lado.</h1>
+          <div class="meta-row" style="margin-top: auto;">
+            <span>Tema um</span>
+            <span class="dot"></span>
+            <span>Tema dois</span>
+          </div>
+        </div>
+        <div class="img-ph" style="border-radius: 28px;">Imagem · hero</div>
+      </div>
+    </section>
+
+    <!-- Capa · centralizada ============================================ -->
+    <section class="slide bg-brand s-cover" data-screen-label="Capa · centralizada" data-category="cover"
+      data-briiq-layout-id="capa-centralizada"
+      data-briiq-intent="Capa centralizada, simétrica"
+      data-briiq-keywords="capa centralizada, cover centrado, abertura simétrica, capa formal, slide inicial centrado, co-brand"
+      data-briiq-arity="1">
+      <div class="brand-mark" style="align-self: center; margin-bottom: 0;">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Sua Marca</span>
+      </div>
+
+      <div style="margin-block: auto; text-align: center; align-self: center; max-width: 1500px;">
+        <p class="eyebrow" style="margin-bottom: 24px;" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Apresentação · <span class="placeholder">[Ano]</span></p>
+        <h1 class="display" style="max-width: none;" data-briiq-slot="h1" data-briiq-slot-max="60">Título centralizado<br/>em duas linhas.</h1>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <p class="eyebrow" style="opacity: 0.55; margin: 0;">Apresentado para</p>
+        <span class="wm placeholder" style="font-size: 64px; line-height: 1;">[Logo cliente]</span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         Divisores
+         ════════════════════════════════════════════════════════════ -->
+
+    <!-- Divisor pequeno ================================================ -->
+    <section class="slide bg-dark s-divider" data-screen-label="Divisor · Seção 01" data-category="divider"
+      data-briiq-layout-id="divisor-secao"
+      data-briiq-intent="Divisor de seção, número grande"
+      data-briiq-keywords="divisor, separador de seção, transição, número grande, seção, novo capítulo, interstitial"
+      data-briiq-arity="1">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Seção 01 de 03</p>
+      <div class="div-grid">
+        <span class="div-num" data-briiq-slot="section-num" data-briiq-slot-max="4">01</span>
+        <h1 class="div-title" data-briiq-slot="h1" data-briiq-slot-max="60">Título da seção um.</h1>
+      </div>
+      <div class="div-rule"></div>
+    </section>
+
+    <!-- Capítulo grande ================================================ -->
+    <section class="slide bg-dark s-chapter" data-screen-label="Capítulo grande" data-category="divider"
+      data-briiq-layout-id="capitulo-grande"
+      data-briiq-intent="Capítulo grande, headline forte"
+      data-briiq-keywords="capítulo, capítulo grande, divisor de capítulo, headline forte, transição de bloco, seção importante"
+      data-briiq-arity="1">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Seção 02 de 03</p>
+
+      <div style="margin-top: auto;">
+        <span class="chapter-num" data-briiq-slot="chapter-num" data-briiq-slot-max="4">02</span>
+        <h1 class="chapter-title" data-briiq-slot="h1" data-briiq-slot-max="60">Título da seção dois.</h1>
+        <p class="chapter-sub" data-briiq-slot="subtitle" data-briiq-slot-max="140">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+    </section>
+
+    <!-- Capítulo grande (claro) ======================================== -->
+    <section class="slide bg-brand s-chapter" data-screen-label="Capítulo grande (claro)" data-category="divider"
+      data-briiq-layout-id="capitulo-grande-claro"
+      data-briiq-intent="Capítulo grande, paleta clara"
+      data-briiq-keywords="capítulo claro, capítulo light, divisor claro, headline claro, transição clara, seção clara, variante clara"
+      data-briiq-arity="1">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Seção 03 de 03</p>
+
+      <div style="margin-top: auto;">
+        <span class="chapter-num" data-briiq-slot="chapter-num" data-briiq-slot-max="4">03</span>
+        <h1 class="chapter-title" data-briiq-slot="h1" data-briiq-slot-max="60">Título da seção três.</h1>
+        <p class="chapter-sub" data-briiq-slot="subtitle" data-briiq-slot-max="140">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         Conteúdo
+         ════════════════════════════════════════════════════════════ -->
+
+    <!-- Agenda ========================================================= -->
+    <section class="slide bg-base" data-screen-label="Agenda" data-category="content"
+      data-briiq-layout-id="agenda"
+      data-briiq-intent="Lista numerada de tópicos da apresentação"
+      data-briiq-keywords="agenda, sumário, índice, tópicos, lista de assuntos, pauta, estrutura da apresentação, visão geral"
+      data-briiq-arity="5">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Agenda</p>
+      <h1 class="h1" style="margin-top: 24px;" data-briiq-slot="h1" data-briiq-slot-max="60">Sumário em cinco partes.</h1>
+
+      <div class="agenda">
+        <div class="row">
+          <span class="num">01</span>
+          <div>
+            <div class="item-title" data-briiq-slot="item[1].t" data-briiq-slot-max="40">Seção um</div>
+            <div class="item-sub" data-briiq-slot="item[1].sub" data-briiq-slot-max="80">Lorem ipsum dolor sit amet.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">02</span>
+          <div>
+            <div class="item-title" data-briiq-slot="item[2].t" data-briiq-slot-max="40">Seção dois</div>
+            <div class="item-sub" data-briiq-slot="item[2].sub" data-briiq-slot-max="80">Consectetur adipiscing elit.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">03</span>
+          <div>
+            <div class="item-title" data-briiq-slot="item[3].t" data-briiq-slot-max="40">Seção três</div>
+            <div class="item-sub" data-briiq-slot="item[3].sub" data-briiq-slot-max="80">Sed do eiusmod tempor incididunt.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">04</span>
+          <div>
+            <div class="item-title" data-briiq-slot="item[4].t" data-briiq-slot-max="40">Seção quatro</div>
+            <div class="item-sub" data-briiq-slot="item[4].sub" data-briiq-slot-max="80">Ut labore et dolore magna aliqua.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">05</span>
+          <div>
+            <div class="item-title" data-briiq-slot="item[5].t" data-briiq-slot-max="40">Seção cinco</div>
+            <div class="item-sub" data-briiq-slot="item[5].sub" data-briiq-slot-max="80">Enim ad minim veniam, quis nostrud.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Três cards ===================================================== -->
+    <section class="slide bg-brand" data-screen-label="Três cards" data-category="content"
+      data-briiq-layout-id="tres-cards"
+      data-briiq-intent="3 conceitos paralelos em cards"
+      data-briiq-keywords="3 conceitos, três cards, trio, três pilares, três princípios, três blocos, três benefícios, três razões"
+      data-briiq-arity="3">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Eyebrow</p>
+      <h1 class="h1" style="margin-top: 24px; max-width: 22ch;" data-briiq-slot="h1" data-briiq-slot-max="60">Três blocos. Uma ideia em cada.</h1>
+
+      <div class="principles">
+        <div class="card">
+          <span class="num">01</span>
+          <h3 class="t" data-briiq-slot="card[1].t" data-briiq-slot-max="30">Título do card um.</h3>
+          <p class="b" data-briiq-slot="card[1].b" data-briiq-slot-max="280">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3 class="t" data-briiq-slot="card[2].t" data-briiq-slot-max="30">Título do card dois.</h3>
+          <p class="b" data-briiq-slot="card[2].b" data-briiq-slot-max="280">Ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3 class="t" data-briiq-slot="card[3].t" data-briiq-slot-max="30">Título do card três.</h3>
+          <p class="b" data-briiq-slot="card[3].b" data-briiq-slot-max="280">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Texto + imagem ================================================= -->
+    <section class="slide bg-base" data-screen-label="Texto + imagem" data-category="content"
+      data-briiq-layout-id="texto-imagem"
+      data-briiq-intent="Texto principal com imagem ao lado"
+      data-briiq-keywords="texto e imagem, texto com foto, conteúdo ilustrado, copy com visual, dois blocos, imagem lateral, explicação visual"
+      data-briiq-arity="2">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Eyebrow</p>
+      <h1 class="h1" style="margin-top: 24px; max-width: 22ch;" data-briiq-slot="h1" data-briiq-slot-max="60">Lorem ipsum dolor sit amet.</h1>
+
+      <div class="text-img">
+        <div class="copy">
+          <p class="body" data-briiq-slot="body[1]" data-briiq-slot-max="280">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <p class="body" data-briiq-slot="body[2]" data-briiq-slot-max="280">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="img-ph">Imagem · descritivo</div>
+      </div>
+    </section>
+
+    <!-- Comparação ===================================================== -->
+    <section class="slide bg-brand" data-screen-label="Comparação" data-category="content"
+      data-briiq-layout-id="comparacao"
+      data-briiq-intent="Comparação lado a lado, 2 colunas"
+      data-briiq-keywords="comparação, antes e depois, prós e contras, dois lados, lado a lado, vs, versus, diferença, contraste"
+      data-briiq-arity="2">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Eyebrow</p>
+      <h1 class="h1" style="margin-top: 24px;" data-briiq-slot="h1" data-briiq-slot-max="60">Coluna A vs. Coluna B.</h1>
+
+      <div class="compare">
+        <div class="compare-col">
+          <span class="lab" data-briiq-slot="col[1].lab" data-briiq-slot-max="20">Coluna A</span>
+          <h3 data-briiq-slot="col[1].t" data-briiq-slot-max="50">Título da coluna esquerda.</h3>
+          <ul>
+            <li data-briiq-slot="col[1].li[1]" data-briiq-slot-max="80">Lorem ipsum dolor sit amet</li>
+            <li data-briiq-slot="col[1].li[2]" data-briiq-slot-max="80">Consectetur adipiscing elit</li>
+            <li data-briiq-slot="col[1].li[3]" data-briiq-slot-max="80">Sed do eiusmod tempor incididunt</li>
+            <li data-briiq-slot="col[1].li[4]" data-briiq-slot-max="80">Ut labore et dolore magna</li>
+          </ul>
+        </div>
+        <div class="compare-col right">
+          <span class="lab" data-briiq-slot="col[2].lab" data-briiq-slot-max="20">Coluna B</span>
+          <h3 data-briiq-slot="col[2].t" data-briiq-slot-max="50">Título da coluna direita.</h3>
+          <ul>
+            <li data-briiq-slot="col[2].li[1]" data-briiq-slot-max="80">Ut enim ad minim veniam</li>
+            <li data-briiq-slot="col[2].li[2]" data-briiq-slot-max="80">Quis nostrud exercitation</li>
+            <li data-briiq-slot="col[2].li[3]" data-briiq-slot-max="80">Duis aute irure dolor</li>
+            <li data-briiq-slot="col[2].li[4]" data-briiq-slot-max="80">Excepteur sint occaecat cupidatat</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quatro etapas ================================================== -->
+    <section class="slide bg-base" data-screen-label="Quatro etapas" data-category="content"
+      data-briiq-layout-id="quatro-etapas"
+      data-briiq-intent="4 conceitos paralelos, peso igual"
+      data-briiq-keywords="4 conceitos, quatro etapas, passos, fases, 4 pilares, 4 elementos, quatro blocos, quatro pilares"
+      data-briiq-arity="4">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Eyebrow</p>
+      <h1 class="h1" style="margin-top: 24px;" data-briiq-slot="h1" data-briiq-slot-max="60">Quatro etapas. <span class="placeholder">[Duração total]</span>.</h1>
+
+      <div class="steps">
+        <div class="step">
+          <span class="n" data-briiq-slot="step[1].n" data-briiq-slot-max="4">01</span>
+          <h3 class="t" data-briiq-slot="step[1].t" data-briiq-slot-max="30">Etapa um.</h3>
+          <p class="b" data-briiq-slot="step[1].b" data-briiq-slot-max="280">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="meta"><span class="placeholder">[Duração]</span></span>
+        </div>
+        <div class="step">
+          <span class="n" data-briiq-slot="step[2].n" data-briiq-slot-max="4">02</span>
+          <h3 class="t" data-briiq-slot="step[2].t" data-briiq-slot-max="30">Etapa dois.</h3>
+          <p class="b" data-briiq-slot="step[2].b" data-briiq-slot-max="280">Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <span class="meta"><span class="placeholder">[Duração]</span></span>
+        </div>
+        <div class="step">
+          <span class="n" data-briiq-slot="step[3].n" data-briiq-slot-max="4">03</span>
+          <h3 class="t" data-briiq-slot="step[3].t" data-briiq-slot-max="30">Etapa três.</h3>
+          <p class="b" data-briiq-slot="step[3].b" data-briiq-slot-max="280">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="meta"><span class="placeholder">[Duração]</span></span>
+        </div>
+        <div class="step">
+          <span class="n" data-briiq-slot="step[4].n" data-briiq-slot-max="4">04</span>
+          <h3 class="t" data-briiq-slot="step[4].t" data-briiq-slot-max="30">Etapa quatro.</h3>
+          <p class="b" data-briiq-slot="step[4].b" data-briiq-slot-max="280">Duis aute irure dolor in reprehenderit in voluptate.</p>
+          <span class="meta"><span class="placeholder">[Duração]</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Próximos passos ================================================ -->
+    <section class="slide bg-base" data-screen-label="Próximos passos" data-category="content"
+      data-briiq-layout-id="proximos-passos"
+      data-briiq-intent="Lista de próximos passos / ações"
+      data-briiq-keywords="próximos passos, ações, call to action, o que fazer, plano de ação, follow-up, cronograma, next steps"
+      data-briiq-arity="3">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Próximos passos</p>
+      <h1 class="h1" style="margin-top: 24px;" data-briiq-slot="h1" data-briiq-slot-max="60">Três passos. <span class="placeholder">[Cronograma]</span>.</h1>
+
+      <div class="next-grid">
+        <div class="next-card">
+          <span class="n">01</span>
+          <h3 class="t" data-briiq-slot="step[1].t" data-briiq-slot-max="30">Passo um.</h3>
+          <p class="b" data-briiq-slot="step[1].b" data-briiq-slot-max="280">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="when"><span class="placeholder">[Quando]</span></span>
+        </div>
+        <div class="next-card">
+          <span class="n">02</span>
+          <h3 class="t" data-briiq-slot="step[2].t" data-briiq-slot-max="30">Passo dois.</h3>
+          <p class="b" data-briiq-slot="step[2].b" data-briiq-slot-max="280">Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <span class="when"><span class="placeholder">[Quando]</span></span>
+        </div>
+        <div class="next-card">
+          <span class="n">03</span>
+          <h3 class="t" data-briiq-slot="step[3].t" data-briiq-slot-max="30">Passo três.</h3>
+          <p class="b" data-briiq-slot="step[3].b" data-briiq-slot-max="280">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="when"><span class="placeholder">[Quando]</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         Dados
+         ════════════════════════════════════════════════════════════ -->
+
+    <!-- Big stat ======================================================= -->
+    <section class="slide bg-dark" data-screen-label="Big stat" data-category="data"
+      data-briiq-layout-id="big-stat"
+      data-briiq-intent="Estatística destacada, número grande"
+      data-briiq-keywords="número grande, estatística, um dado, métrica destacada, número de impacto, big number, dado relevante, KPI"
+      data-briiq-arity="1">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Eyebrow</p>
+
+      <div class="big-stat">
+        <span class="num" data-briiq-slot="stat.value" data-briiq-slot-max="12">00%</span>
+        <p class="label" data-briiq-slot="stat.label" data-briiq-slot-max="120">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+      </div>
+
+      <div class="meta-row" style="margin-top: 56px;">
+        <span><span class="placeholder">[Origem]</span></span>
+        <span class="dot"></span>
+        <span><span class="placeholder">[Período]</span></span>
+      </div>
+    </section>
+
+    <!-- Em números ===================================================== -->
+    <section class="slide bg-base" data-screen-label="Em números" data-category="data"
+      data-briiq-layout-id="em-numeros"
+      data-briiq-intent="Múltiplas estatísticas em grid"
+      data-briiq-keywords="em números, múltiplos dados, grid de stats, três métricas, dados quantitativos, números da empresa, estatísticas"
+      data-briiq-arity="3">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Em números</p>
+      <h1 class="h1" style="margin-top: 24px;" data-briiq-slot="h1" data-briiq-slot-max="60">Lorem ipsum dolor sit amet.</h1>
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="n" data-briiq-slot="stat[1].n" data-briiq-slot-max="12">00</span>
+          <span class="t" data-briiq-slot="stat[1].t" data-briiq-slot-max="40">lorem ipsum dolor</span>
+          <span class="u"><span class="placeholder">[contexto]</span></span>
+        </div>
+        <div class="stat">
+          <span class="n" data-briiq-slot="stat[2].n" data-briiq-slot-max="12">00</span>
+          <span class="t" data-briiq-slot="stat[2].t" data-briiq-slot-max="40">consectetur adipiscing</span>
+          <span class="u"><span class="placeholder">[contexto]</span></span>
+        </div>
+        <div class="stat">
+          <span class="n" data-briiq-slot="stat[3].n" data-briiq-slot-max="12">00</span>
+          <span class="t" data-briiq-slot="stat[3].t" data-briiq-slot-max="40">sed do eiusmod</span>
+          <span class="u"><span class="placeholder">[contexto]</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         Citações & Fechamento
+         ════════════════════════════════════════════════════════════ -->
+
+    <!-- Citação grande ================================================= -->
+    <section class="slide bg-accent s-quote" data-screen-label="Citação" data-category="closing"
+      data-briiq-layout-id="citacao"
+      data-briiq-intent="Citação com autor"
+      data-briiq-keywords="citação, quote, frase de impacto, depoimento, palavra do cliente, testemunhal, frase marcante"
+      data-briiq-arity="1">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Atribuição</p>
+
+      <h1 class="display push" style="margin-top: auto;" data-briiq-slot="quote" data-briiq-slot-max="280">
+        <span class="qmk">"</span>Lorem ipsum dolor sit amet,<br/>consectetur <em>adipiscing</em> elit.<span class="qmk">"</span>
+      </h1>
+
+      <div class="meta-row">
+        <span>— <span class="placeholder">[Nome do autor]</span></span>
+        <span class="dot"></span>
+        <span><span class="placeholder">[Cargo · Empresa]</span></span>
+      </div>
+    </section>
+
+    <!-- Citação curta ================================================== -->
+    <section class="slide bg-brand-2 s-quote" data-screen-label="Citação curta" data-category="closing"
+      data-briiq-layout-id="citacao-curta"
+      data-briiq-intent="Citação curta, alto impacto"
+      data-briiq-keywords="citação curta, frase curta, quote curto, frase de efeito, pensamento, mote, slogan, frase impactante"
+      data-briiq-arity="1">
+      <div class="pg"></div>
+      <p class="eyebrow" data-briiq-slot="eyebrow" data-briiq-slot-max="25">Eyebrow</p>
+
+      <h1 class="display push" style="font-size: calc(108px * var(--type-scale)); max-width: 24ch; margin-top: auto;" data-briiq-slot="quote" data-briiq-slot-max="160">
+        <span class="qmk">"</span>Lorem ipsum dolor sit amet consectetur <em>adipiscing</em> elit.<span class="qmk">"</span>
+      </h1>
+
+      <div class="meta-row" style="margin-top: 56px;">
+        <span>— <span class="placeholder">[Nome do autor]</span></span>
+        <span class="dot"></span>
+        <span><span class="placeholder">[Cargo · Empresa]</span></span>
+      </div>
+    </section>
+
+    <!-- Contato (closing) ============================================== -->
+    <section class="slide bg-dark s-closing" data-screen-label="Contato" data-category="closing"
+      data-briiq-layout-id="contato"
+      data-briiq-intent="Slide de contato / closing"
+      data-briiq-keywords="contato, fechamento, encerramento, obrigado, fim, closing, thank you, fale conosco, vamos conversar"
+      data-briiq-arity="1">
+      <div class="brand-mark">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Sua Marca</span>
+      </div>
+
+      <h1 class="display" data-briiq-slot="h1" data-briiq-slot-max="60">Vamos conversar?</h1>
+      <p class="body-lg" data-briiq-slot="body" data-briiq-slot-max="160">
+        Lorem ipsum dolor sit amet — <a href="mailto:contato@empresa.com">contato@empresa.com</a>
+      </p>
+
+      <div class="meta-row">
+        <span><span class="placeholder">[Site]</span></span>
+        <span class="dot"></span>
+        <span><span class="placeholder">[Social]</span></span>
+        <span class="dot"></span>
+        <span><span class="placeholder">[Cidade · País]</span></span>
+      </div>
+    </section>
+
+  </deck-stage>
+
+</body>
+</html>

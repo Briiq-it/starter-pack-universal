@@ -1,0 +1,991 @@
+{
+  "version": "v1",
+  "generatedAt": "2026-05-29T20:13:40.525Z",
+  "source": "templates\\index.html",
+  "layouts": [
+    {
+      "id": "capa",
+      "intent": "Capa de apresentação, com título principal",
+      "intent_keywords": [
+        "capa",
+        "capa de apresentação",
+        "título principal",
+        "slide inicial",
+        "cover",
+        "abertura",
+        "primeira lâmina"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand s-cover\" data-screen-label=\"Capa\" data-category=\"cover\"\n      data-briiq-layout-id=\"capa\"\n      data-briiq-intent=\"Capa de apresentação, com título principal\"\n      data-briiq-keywords=\"capa, capa de apresentação, título principal, slide inicial, cover, abertura, primeira lâmina\"\n      data-briiq-arity=\"1\">\n      <div class=\"brand-mark\">\n        <span class=\"logo-mark\" aria-hidden=\"true\"></span>\n        <span class=\"wm\">Sua Marca</span>\n      </div>\n\n      <div class=\"push\">\n        <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n        <h1 class=\"display\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n      </div>\n\n      <div class=\"meta-row\">\n        <span>Tema um</span>\n        <span class=\"dot\"></span>\n        <span>Tema dois</span>\n        <span class=\"dot\"></span>\n        <span>Tema três</span>\n      </div>\n    </section>"
+    },
+    {
+      "id": "capa-minimalista",
+      "intent": "Capa minimalista, foco no título",
+      "intent_keywords": [
+        "capa minimalista",
+        "capa simples",
+        "título limpo",
+        "cover clean",
+        "abertura minimalista",
+        "sem ornamento"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand s-cover\" data-screen-label=\"Capa · minimalista\" data-category=\"cover\"\n      data-briiq-layout-id=\"capa-minimalista\"\n      data-briiq-intent=\"Capa minimalista, foco no título\"\n      data-briiq-keywords=\"capa minimalista, capa simples, título limpo, cover clean, abertura minimalista, sem ornamento\"\n      data-briiq-arity=\"1\">\n      <div class=\"brand-mark\">\n        <span class=\"logo-mark\" aria-hidden=\"true\"></span>\n        <span class=\"wm\">Sua Marca</span>\n      </div>\n\n      <div class=\"push\">\n        <h1 class=\"display\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n        <p class=\"eyebrow\" style=\"margin-top: 24px;\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      </div>\n    </section>"
+    },
+    {
+      "id": "capa-com-imagem",
+      "intent": "Capa com imagem grande lateral",
+      "intent_keywords": [
+        "capa com imagem",
+        "cover hero",
+        "capa foto",
+        "capa visual",
+        "abertura com imagem",
+        "slide inicial com foto"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-base s-cover\" data-screen-label=\"Capa · com imagem\" data-category=\"cover\"\n      data-briiq-layout-id=\"capa-com-imagem\"\n      data-briiq-intent=\"Capa com imagem grande lateral\"\n      data-briiq-keywords=\"capa com imagem, cover hero, capa foto, capa visual, abertura com imagem, slide inicial com foto\"\n      data-briiq-arity=\"1\">\n      <div class=\"brand-mark\">\n        <span class=\"logo-mark\" aria-hidden=\"true\"></span>\n        <span class=\"wm\">Sua Marca</span>\n      </div>\n\n      <div class=\"case-grid\">\n        <div class=\"copy\">\n          <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n          <h1 class=\"display\" style=\"max-width: 11ch;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n          <div class=\"meta-row\" style=\"margin-top: auto;\">\n            <span>Tema um</span>\n            <span class=\"dot\"></span>\n            <span>Tema dois</span>\n          </div>\n        </div>\n        <div class=\"img-ph\" style=\"border-radius: 28px;\">Imagem · hero</div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "capa-centralizada",
+      "intent": "Capa centralizada, simétrica",
+      "intent_keywords": [
+        "capa centralizada",
+        "cover centrado",
+        "abertura simétrica",
+        "capa formal",
+        "slide inicial centrado",
+        "co-brand"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand s-cover\" data-screen-label=\"Capa · centralizada\" data-category=\"cover\"\n      data-briiq-layout-id=\"capa-centralizada\"\n      data-briiq-intent=\"Capa centralizada, simétrica\"\n      data-briiq-keywords=\"capa centralizada, cover centrado, abertura simétrica, capa formal, slide inicial centrado, co-brand\"\n      data-briiq-arity=\"1\">\n      <div class=\"brand-mark\" style=\"align-self: center; margin-bottom: 0;\">\n        <span class=\"logo-mark\" aria-hidden=\"true\"></span>\n        <span class=\"wm\">Sua Marca</span>\n      </div>\n\n      <div style=\"margin-block: auto; text-align: center; align-self: center; max-width: 1500px;\">\n        <p class=\"eyebrow\" style=\"margin-bottom: 24px;\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n        <h1 class=\"display\" style=\"max-width: none;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n      </div>\n\n      <div style=\"display: flex; flex-direction: column; align-items: center; gap: 16px;\">\n        <p class=\"eyebrow\" style=\"opacity: 0.55; margin: 0;\">Apresentado para</p>\n        <span class=\"wm placeholder\" style=\"font-size: 64px; line-height: 1;\">[Logo cliente]</span>\n      </div>\n    </section>"
+    },
+    {
+      "id": "divisor-secao",
+      "intent": "Divisor de seção, número grande",
+      "intent_keywords": [
+        "divisor",
+        "separador de seção",
+        "transição",
+        "número grande",
+        "seção",
+        "novo capítulo",
+        "interstitial"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "section-num",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-dark s-divider\" data-screen-label=\"Divisor · Seção 01\" data-category=\"divider\"\n      data-briiq-layout-id=\"divisor-secao\"\n      data-briiq-intent=\"Divisor de seção, número grande\"\n      data-briiq-keywords=\"divisor, separador de seção, transição, número grande, seção, novo capítulo, interstitial\"\n      data-briiq-arity=\"1\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <div class=\"div-grid\">\n        <span class=\"div-num\" data-briiq-slot=\"section-num\" data-briiq-slot-max=\"4\">{{slot:section-num}}</span>\n        <h1 class=\"div-title\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n      </div>\n      <div class=\"div-rule\"></div>\n    </section>"
+    },
+    {
+      "id": "capitulo-grande",
+      "intent": "Capítulo grande, headline forte",
+      "intent_keywords": [
+        "capítulo",
+        "capítulo grande",
+        "divisor de capítulo",
+        "headline forte",
+        "transição de bloco",
+        "seção importante"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "chapter-num",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "subtitle",
+          "type": "text",
+          "constraints": {
+            "maxChars": 140
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-dark s-chapter\" data-screen-label=\"Capítulo grande\" data-category=\"divider\"\n      data-briiq-layout-id=\"capitulo-grande\"\n      data-briiq-intent=\"Capítulo grande, headline forte\"\n      data-briiq-keywords=\"capítulo, capítulo grande, divisor de capítulo, headline forte, transição de bloco, seção importante\"\n      data-briiq-arity=\"1\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n\n      <div style=\"margin-top: auto;\">\n        <span class=\"chapter-num\" data-briiq-slot=\"chapter-num\" data-briiq-slot-max=\"4\">{{slot:chapter-num}}</span>\n        <h1 class=\"chapter-title\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n        <p class=\"chapter-sub\" data-briiq-slot=\"subtitle\" data-briiq-slot-max=\"140\">{{slot:subtitle}}</p>\n      </div>\n    </section>"
+    },
+    {
+      "id": "capitulo-grande-claro",
+      "intent": "Capítulo grande, paleta clara",
+      "intent_keywords": [
+        "capítulo claro",
+        "capítulo light",
+        "divisor claro",
+        "headline claro",
+        "transição clara",
+        "seção clara",
+        "variante clara"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "chapter-num",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "subtitle",
+          "type": "text",
+          "constraints": {
+            "maxChars": 140
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand s-chapter\" data-screen-label=\"Capítulo grande (claro)\" data-category=\"divider\"\n      data-briiq-layout-id=\"capitulo-grande-claro\"\n      data-briiq-intent=\"Capítulo grande, paleta clara\"\n      data-briiq-keywords=\"capítulo claro, capítulo light, divisor claro, headline claro, transição clara, seção clara, variante clara\"\n      data-briiq-arity=\"1\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n\n      <div style=\"margin-top: auto;\">\n        <span class=\"chapter-num\" data-briiq-slot=\"chapter-num\" data-briiq-slot-max=\"4\">{{slot:chapter-num}}</span>\n        <h1 class=\"chapter-title\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n        <p class=\"chapter-sub\" data-briiq-slot=\"subtitle\" data-briiq-slot-max=\"140\">{{slot:subtitle}}</p>\n      </div>\n    </section>"
+    },
+    {
+      "id": "agenda",
+      "intent": "Lista numerada de tópicos da apresentação",
+      "intent_keywords": [
+        "agenda",
+        "sumário",
+        "índice",
+        "tópicos",
+        "lista de assuntos",
+        "pauta",
+        "estrutura da apresentação",
+        "visão geral"
+      ],
+      "arity_hint": 5,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "item[1].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "item[1].sub",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "item[2].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "item[2].sub",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "item[3].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "item[3].sub",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "item[4].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "item[4].sub",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "item[5].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "item[5].sub",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-base\" data-screen-label=\"Agenda\" data-category=\"content\"\n      data-briiq-layout-id=\"agenda\"\n      data-briiq-intent=\"Lista numerada de tópicos da apresentação\"\n      data-briiq-keywords=\"agenda, sumário, índice, tópicos, lista de assuntos, pauta, estrutura da apresentação, visão geral\"\n      data-briiq-arity=\"5\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"agenda\">\n        <div class=\"row\">\n          <span class=\"num\">01</span>\n          <div>\n            <div class=\"item-title\" data-briiq-slot=\"item[1].t\" data-briiq-slot-max=\"40\">{{slot:item[1].t}}</div>\n            <div class=\"item-sub\" data-briiq-slot=\"item[1].sub\" data-briiq-slot-max=\"80\">{{slot:item[1].sub}}</div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <span class=\"num\">02</span>\n          <div>\n            <div class=\"item-title\" data-briiq-slot=\"item[2].t\" data-briiq-slot-max=\"40\">{{slot:item[2].t}}</div>\n            <div class=\"item-sub\" data-briiq-slot=\"item[2].sub\" data-briiq-slot-max=\"80\">{{slot:item[2].sub}}</div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <span class=\"num\">03</span>\n          <div>\n            <div class=\"item-title\" data-briiq-slot=\"item[3].t\" data-briiq-slot-max=\"40\">{{slot:item[3].t}}</div>\n            <div class=\"item-sub\" data-briiq-slot=\"item[3].sub\" data-briiq-slot-max=\"80\">{{slot:item[3].sub}}</div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <span class=\"num\">04</span>\n          <div>\n            <div class=\"item-title\" data-briiq-slot=\"item[4].t\" data-briiq-slot-max=\"40\">{{slot:item[4].t}}</div>\n            <div class=\"item-sub\" data-briiq-slot=\"item[4].sub\" data-briiq-slot-max=\"80\">{{slot:item[4].sub}}</div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <span class=\"num\">05</span>\n          <div>\n            <div class=\"item-title\" data-briiq-slot=\"item[5].t\" data-briiq-slot-max=\"40\">{{slot:item[5].t}}</div>\n            <div class=\"item-sub\" data-briiq-slot=\"item[5].sub\" data-briiq-slot-max=\"80\">{{slot:item[5].sub}}</div>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "tres-cards",
+      "intent": "3 conceitos paralelos em cards",
+      "intent_keywords": [
+        "3 conceitos",
+        "três cards",
+        "trio",
+        "três pilares",
+        "três princípios",
+        "três blocos",
+        "três benefícios",
+        "três razões"
+      ],
+      "arity_hint": 3,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "card[1].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "card[1].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "card[2].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "card[2].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "card[3].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "card[3].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand\" data-screen-label=\"Três cards\" data-category=\"content\"\n      data-briiq-layout-id=\"tres-cards\"\n      data-briiq-intent=\"3 conceitos paralelos em cards\"\n      data-briiq-keywords=\"3 conceitos, três cards, trio, três pilares, três princípios, três blocos, três benefícios, três razões\"\n      data-briiq-arity=\"3\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px; max-width: 22ch;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"principles\">\n        <div class=\"card\">\n          <span class=\"num\">01</span>\n          <h3 class=\"t\" data-briiq-slot=\"card[1].t\" data-briiq-slot-max=\"30\">{{slot:card[1].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"card[1].b\" data-briiq-slot-max=\"280\">{{slot:card[1].b}}</p>\n        </div>\n        <div class=\"card\">\n          <span class=\"num\">02</span>\n          <h3 class=\"t\" data-briiq-slot=\"card[2].t\" data-briiq-slot-max=\"30\">{{slot:card[2].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"card[2].b\" data-briiq-slot-max=\"280\">{{slot:card[2].b}}</p>\n        </div>\n        <div class=\"card\">\n          <span class=\"num\">03</span>\n          <h3 class=\"t\" data-briiq-slot=\"card[3].t\" data-briiq-slot-max=\"30\">{{slot:card[3].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"card[3].b\" data-briiq-slot-max=\"280\">{{slot:card[3].b}}</p>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "texto-imagem",
+      "intent": "Texto principal com imagem ao lado",
+      "intent_keywords": [
+        "texto e imagem",
+        "texto com foto",
+        "conteúdo ilustrado",
+        "copy com visual",
+        "dois blocos",
+        "imagem lateral",
+        "explicação visual"
+      ],
+      "arity_hint": 2,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "body[1]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "body[2]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-base\" data-screen-label=\"Texto + imagem\" data-category=\"content\"\n      data-briiq-layout-id=\"texto-imagem\"\n      data-briiq-intent=\"Texto principal com imagem ao lado\"\n      data-briiq-keywords=\"texto e imagem, texto com foto, conteúdo ilustrado, copy com visual, dois blocos, imagem lateral, explicação visual\"\n      data-briiq-arity=\"2\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px; max-width: 22ch;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"text-img\">\n        <div class=\"copy\">\n          <p class=\"body\" data-briiq-slot=\"body[1]\" data-briiq-slot-max=\"280\">{{slot:body[1]}}</p>\n          <p class=\"body\" data-briiq-slot=\"body[2]\" data-briiq-slot-max=\"280\">{{slot:body[2]}}</p>\n        </div>\n        <div class=\"img-ph\">Imagem · descritivo</div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "comparacao",
+      "intent": "Comparação lado a lado, 2 colunas",
+      "intent_keywords": [
+        "comparação",
+        "antes e depois",
+        "prós e contras",
+        "dois lados",
+        "lado a lado",
+        "vs",
+        "versus",
+        "diferença",
+        "contraste"
+      ],
+      "arity_hint": 2,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "col[1].lab",
+          "type": "text",
+          "constraints": {
+            "maxChars": 20
+          }
+        },
+        {
+          "id": "col[1].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 50
+          }
+        },
+        {
+          "id": "col[1].li[1]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[1].li[2]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[1].li[3]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[1].li[4]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[2].lab",
+          "type": "text",
+          "constraints": {
+            "maxChars": 20
+          }
+        },
+        {
+          "id": "col[2].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 50
+          }
+        },
+        {
+          "id": "col[2].li[1]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[2].li[2]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[2].li[3]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        },
+        {
+          "id": "col[2].li[4]",
+          "type": "text",
+          "constraints": {
+            "maxChars": 80
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand\" data-screen-label=\"Comparação\" data-category=\"content\"\n      data-briiq-layout-id=\"comparacao\"\n      data-briiq-intent=\"Comparação lado a lado, 2 colunas\"\n      data-briiq-keywords=\"comparação, antes e depois, prós e contras, dois lados, lado a lado, vs, versus, diferença, contraste\"\n      data-briiq-arity=\"2\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"compare\">\n        <div class=\"compare-col\">\n          <span class=\"lab\" data-briiq-slot=\"col[1].lab\" data-briiq-slot-max=\"20\">{{slot:col[1].lab}}</span>\n          <h3 data-briiq-slot=\"col[1].t\" data-briiq-slot-max=\"50\">{{slot:col[1].t}}</h3>\n          <ul>\n            <li data-briiq-slot=\"col[1].li[1]\" data-briiq-slot-max=\"80\">{{slot:col[1].li[1]}}</li>\n            <li data-briiq-slot=\"col[1].li[2]\" data-briiq-slot-max=\"80\">{{slot:col[1].li[2]}}</li>\n            <li data-briiq-slot=\"col[1].li[3]\" data-briiq-slot-max=\"80\">{{slot:col[1].li[3]}}</li>\n            <li data-briiq-slot=\"col[1].li[4]\" data-briiq-slot-max=\"80\">{{slot:col[1].li[4]}}</li>\n          </ul>\n        </div>\n        <div class=\"compare-col right\">\n          <span class=\"lab\" data-briiq-slot=\"col[2].lab\" data-briiq-slot-max=\"20\">{{slot:col[2].lab}}</span>\n          <h3 data-briiq-slot=\"col[2].t\" data-briiq-slot-max=\"50\">{{slot:col[2].t}}</h3>\n          <ul>\n            <li data-briiq-slot=\"col[2].li[1]\" data-briiq-slot-max=\"80\">{{slot:col[2].li[1]}}</li>\n            <li data-briiq-slot=\"col[2].li[2]\" data-briiq-slot-max=\"80\">{{slot:col[2].li[2]}}</li>\n            <li data-briiq-slot=\"col[2].li[3]\" data-briiq-slot-max=\"80\">{{slot:col[2].li[3]}}</li>\n            <li data-briiq-slot=\"col[2].li[4]\" data-briiq-slot-max=\"80\">{{slot:col[2].li[4]}}</li>\n          </ul>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "quatro-etapas",
+      "intent": "4 conceitos paralelos, peso igual",
+      "intent_keywords": [
+        "4 conceitos",
+        "quatro etapas",
+        "passos",
+        "fases",
+        "4 pilares",
+        "4 elementos",
+        "quatro blocos",
+        "quatro pilares"
+      ],
+      "arity_hint": 4,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "step[1].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "step[1].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[1].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "step[2].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "step[2].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[2].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "step[3].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "step[3].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[3].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "step[4].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 4
+          }
+        },
+        {
+          "id": "step[4].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[4].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-base\" data-screen-label=\"Quatro etapas\" data-category=\"content\"\n      data-briiq-layout-id=\"quatro-etapas\"\n      data-briiq-intent=\"4 conceitos paralelos, peso igual\"\n      data-briiq-keywords=\"4 conceitos, quatro etapas, passos, fases, 4 pilares, 4 elementos, quatro blocos, quatro pilares\"\n      data-briiq-arity=\"4\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"steps\">\n        <div class=\"step\">\n          <span class=\"n\" data-briiq-slot=\"step[1].n\" data-briiq-slot-max=\"4\">{{slot:step[1].n}}</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[1].t\" data-briiq-slot-max=\"30\">{{slot:step[1].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[1].b\" data-briiq-slot-max=\"280\">{{slot:step[1].b}}</p>\n          <span class=\"meta\"><span class=\"placeholder\">[Duração]</span></span>\n        </div>\n        <div class=\"step\">\n          <span class=\"n\" data-briiq-slot=\"step[2].n\" data-briiq-slot-max=\"4\">{{slot:step[2].n}}</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[2].t\" data-briiq-slot-max=\"30\">{{slot:step[2].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[2].b\" data-briiq-slot-max=\"280\">{{slot:step[2].b}}</p>\n          <span class=\"meta\"><span class=\"placeholder\">[Duração]</span></span>\n        </div>\n        <div class=\"step\">\n          <span class=\"n\" data-briiq-slot=\"step[3].n\" data-briiq-slot-max=\"4\">{{slot:step[3].n}}</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[3].t\" data-briiq-slot-max=\"30\">{{slot:step[3].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[3].b\" data-briiq-slot-max=\"280\">{{slot:step[3].b}}</p>\n          <span class=\"meta\"><span class=\"placeholder\">[Duração]</span></span>\n        </div>\n        <div class=\"step\">\n          <span class=\"n\" data-briiq-slot=\"step[4].n\" data-briiq-slot-max=\"4\">{{slot:step[4].n}}</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[4].t\" data-briiq-slot-max=\"30\">{{slot:step[4].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[4].b\" data-briiq-slot-max=\"280\">{{slot:step[4].b}}</p>\n          <span class=\"meta\"><span class=\"placeholder\">[Duração]</span></span>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "proximos-passos",
+      "intent": "Lista de próximos passos / ações",
+      "intent_keywords": [
+        "próximos passos",
+        "ações",
+        "call to action",
+        "o que fazer",
+        "plano de ação",
+        "follow-up",
+        "cronograma",
+        "next steps"
+      ],
+      "arity_hint": 3,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "step[1].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[1].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "step[2].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[2].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        },
+        {
+          "id": "step[3].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 30
+          }
+        },
+        {
+          "id": "step[3].b",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-base\" data-screen-label=\"Próximos passos\" data-category=\"content\"\n      data-briiq-layout-id=\"proximos-passos\"\n      data-briiq-intent=\"Lista de próximos passos / ações\"\n      data-briiq-keywords=\"próximos passos, ações, call to action, o que fazer, plano de ação, follow-up, cronograma, next steps\"\n      data-briiq-arity=\"3\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"next-grid\">\n        <div class=\"next-card\">\n          <span class=\"n\">01</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[1].t\" data-briiq-slot-max=\"30\">{{slot:step[1].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[1].b\" data-briiq-slot-max=\"280\">{{slot:step[1].b}}</p>\n          <span class=\"when\"><span class=\"placeholder\">[Quando]</span></span>\n        </div>\n        <div class=\"next-card\">\n          <span class=\"n\">02</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[2].t\" data-briiq-slot-max=\"30\">{{slot:step[2].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[2].b\" data-briiq-slot-max=\"280\">{{slot:step[2].b}}</p>\n          <span class=\"when\"><span class=\"placeholder\">[Quando]</span></span>\n        </div>\n        <div class=\"next-card\">\n          <span class=\"n\">03</span>\n          <h3 class=\"t\" data-briiq-slot=\"step[3].t\" data-briiq-slot-max=\"30\">{{slot:step[3].t}}</h3>\n          <p class=\"b\" data-briiq-slot=\"step[3].b\" data-briiq-slot-max=\"280\">{{slot:step[3].b}}</p>\n          <span class=\"when\"><span class=\"placeholder\">[Quando]</span></span>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "big-stat",
+      "intent": "Estatística destacada, número grande",
+      "intent_keywords": [
+        "número grande",
+        "estatística",
+        "um dado",
+        "métrica destacada",
+        "número de impacto",
+        "big number",
+        "dado relevante",
+        "KPI"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "stat.value",
+          "type": "text",
+          "constraints": {
+            "maxChars": 12
+          }
+        },
+        {
+          "id": "stat.label",
+          "type": "text",
+          "constraints": {
+            "maxChars": 120
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-dark\" data-screen-label=\"Big stat\" data-category=\"data\"\n      data-briiq-layout-id=\"big-stat\"\n      data-briiq-intent=\"Estatística destacada, número grande\"\n      data-briiq-keywords=\"número grande, estatística, um dado, métrica destacada, número de impacto, big number, dado relevante, KPI\"\n      data-briiq-arity=\"1\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n\n      <div class=\"big-stat\">\n        <span class=\"num\" data-briiq-slot=\"stat.value\" data-briiq-slot-max=\"12\">{{slot:stat.value}}</span>\n        <p class=\"label\" data-briiq-slot=\"stat.label\" data-briiq-slot-max=\"120\">{{slot:stat.label}}</p>\n      </div>\n\n      <div class=\"meta-row\" style=\"margin-top: 56px;\">\n        <span><span class=\"placeholder\">[Origem]</span></span>\n        <span class=\"dot\"></span>\n        <span><span class=\"placeholder\">[Período]</span></span>\n      </div>\n    </section>"
+    },
+    {
+      "id": "em-numeros",
+      "intent": "Múltiplas estatísticas em grid",
+      "intent_keywords": [
+        "em números",
+        "múltiplos dados",
+        "grid de stats",
+        "três métricas",
+        "dados quantitativos",
+        "números da empresa",
+        "estatísticas"
+      ],
+      "arity_hint": 3,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "stat[1].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 12
+          }
+        },
+        {
+          "id": "stat[1].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "stat[2].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 12
+          }
+        },
+        {
+          "id": "stat[2].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        },
+        {
+          "id": "stat[3].n",
+          "type": "text",
+          "constraints": {
+            "maxChars": 12
+          }
+        },
+        {
+          "id": "stat[3].t",
+          "type": "text",
+          "constraints": {
+            "maxChars": 40
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-base\" data-screen-label=\"Em números\" data-category=\"data\"\n      data-briiq-layout-id=\"em-numeros\"\n      data-briiq-intent=\"Múltiplas estatísticas em grid\"\n      data-briiq-keywords=\"em números, múltiplos dados, grid de stats, três métricas, dados quantitativos, números da empresa, estatísticas\"\n      data-briiq-arity=\"3\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n      <h1 class=\"h1\" style=\"margin-top: 24px;\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n\n      <div class=\"stat-row\">\n        <div class=\"stat\">\n          <span class=\"n\" data-briiq-slot=\"stat[1].n\" data-briiq-slot-max=\"12\">{{slot:stat[1].n}}</span>\n          <span class=\"t\" data-briiq-slot=\"stat[1].t\" data-briiq-slot-max=\"40\">{{slot:stat[1].t}}</span>\n          <span class=\"u\"><span class=\"placeholder\">[contexto]</span></span>\n        </div>\n        <div class=\"stat\">\n          <span class=\"n\" data-briiq-slot=\"stat[2].n\" data-briiq-slot-max=\"12\">{{slot:stat[2].n}}</span>\n          <span class=\"t\" data-briiq-slot=\"stat[2].t\" data-briiq-slot-max=\"40\">{{slot:stat[2].t}}</span>\n          <span class=\"u\"><span class=\"placeholder\">[contexto]</span></span>\n        </div>\n        <div class=\"stat\">\n          <span class=\"n\" data-briiq-slot=\"stat[3].n\" data-briiq-slot-max=\"12\">{{slot:stat[3].n}}</span>\n          <span class=\"t\" data-briiq-slot=\"stat[3].t\" data-briiq-slot-max=\"40\">{{slot:stat[3].t}}</span>\n          <span class=\"u\"><span class=\"placeholder\">[contexto]</span></span>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+      "id": "citacao",
+      "intent": "Citação com autor",
+      "intent_keywords": [
+        "citação",
+        "quote",
+        "frase de impacto",
+        "depoimento",
+        "palavra do cliente",
+        "testemunhal",
+        "frase marcante"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "quote",
+          "type": "text",
+          "constraints": {
+            "maxChars": 280
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-accent s-quote\" data-screen-label=\"Citação\" data-category=\"closing\"\n      data-briiq-layout-id=\"citacao\"\n      data-briiq-intent=\"Citação com autor\"\n      data-briiq-keywords=\"citação, quote, frase de impacto, depoimento, palavra do cliente, testemunhal, frase marcante\"\n      data-briiq-arity=\"1\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n\n      <h1 class=\"display push\" style=\"margin-top: auto;\" data-briiq-slot=\"quote\" data-briiq-slot-max=\"280\">{{slot:quote}}</h1>\n\n      <div class=\"meta-row\">\n        <span>— <span class=\"placeholder\">[Nome do autor]</span></span>\n        <span class=\"dot\"></span>\n        <span><span class=\"placeholder\">[Cargo · Empresa]</span></span>\n      </div>\n    </section>"
+    },
+    {
+      "id": "citacao-curta",
+      "intent": "Citação curta, alto impacto",
+      "intent_keywords": [
+        "citação curta",
+        "frase curta",
+        "quote curto",
+        "frase de efeito",
+        "pensamento",
+        "mote",
+        "slogan",
+        "frase impactante"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "eyebrow",
+          "type": "text",
+          "constraints": {
+            "maxChars": 25
+          }
+        },
+        {
+          "id": "quote",
+          "type": "text",
+          "constraints": {
+            "maxChars": 160
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-brand-2 s-quote\" data-screen-label=\"Citação curta\" data-category=\"closing\"\n      data-briiq-layout-id=\"citacao-curta\"\n      data-briiq-intent=\"Citação curta, alto impacto\"\n      data-briiq-keywords=\"citação curta, frase curta, quote curto, frase de efeito, pensamento, mote, slogan, frase impactante\"\n      data-briiq-arity=\"1\">\n      <div class=\"pg\"></div>\n      <p class=\"eyebrow\" data-briiq-slot=\"eyebrow\" data-briiq-slot-max=\"25\">{{slot:eyebrow}}</p>\n\n      <h1 class=\"display push\" style=\"font-size: calc(108px * var(--type-scale)); max-width: 24ch; margin-top: auto;\" data-briiq-slot=\"quote\" data-briiq-slot-max=\"160\">{{slot:quote}}</h1>\n\n      <div class=\"meta-row\" style=\"margin-top: 56px;\">\n        <span>— <span class=\"placeholder\">[Nome do autor]</span></span>\n        <span class=\"dot\"></span>\n        <span><span class=\"placeholder\">[Cargo · Empresa]</span></span>\n      </div>\n    </section>"
+    },
+    {
+      "id": "contato",
+      "intent": "Slide de contato / closing",
+      "intent_keywords": [
+        "contato",
+        "fechamento",
+        "encerramento",
+        "obrigado",
+        "fim",
+        "closing",
+        "thank you",
+        "fale conosco",
+        "vamos conversar"
+      ],
+      "arity_hint": 1,
+      "slots": [
+        {
+          "id": "h1",
+          "type": "text",
+          "constraints": {
+            "maxChars": 60
+          }
+        },
+        {
+          "id": "body",
+          "type": "text",
+          "constraints": {
+            "maxChars": 160
+          }
+        }
+      ],
+      "html_clone_template": "<section class=\"slide bg-dark s-closing\" data-screen-label=\"Contato\" data-category=\"closing\"\n      data-briiq-layout-id=\"contato\"\n      data-briiq-intent=\"Slide de contato / closing\"\n      data-briiq-keywords=\"contato, fechamento, encerramento, obrigado, fim, closing, thank you, fale conosco, vamos conversar\"\n      data-briiq-arity=\"1\">\n      <div class=\"brand-mark\">\n        <span class=\"logo-mark\" aria-hidden=\"true\"></span>\n        <span class=\"wm\">Sua Marca</span>\n      </div>\n\n      <h1 class=\"display\" data-briiq-slot=\"h1\" data-briiq-slot-max=\"60\">{{slot:h1}}</h1>\n      <p class=\"body-lg\" data-briiq-slot=\"body\" data-briiq-slot-max=\"160\">{{slot:body}}</p>\n\n      <div class=\"meta-row\">\n        <span><span class=\"placeholder\">[Site]</span></span>\n        <span class=\"dot\"></span>\n        <span><span class=\"placeholder\">[Social]</span></span>\n        <span class=\"dot\"></span>\n        <span><span class=\"placeholder\">[Cidade · País]</span></span>\n      </div>\n    </section>"
+    }
+  ]
+}
