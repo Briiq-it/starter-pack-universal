@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Acme Cloud · visão geral</title>
+<link rel="stylesheet" href="../../ds/tokens.css" />
+<link rel="stylesheet" href="../../ds/components.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<script src="../../templates/deck-stage.js"></script>
+</head>
+<body>
+
+  <deck-stage>
+
+    <!-- Capa -->
+    <section class="slide bg-brand s-cover" data-screen-label="Capa" data-category="cover">
+      <div class="brand-mark">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Acme</span>
+      </div>
+
+      <div class="push">
+        <p class="eyebrow">Apresentação · 2026</p>
+        <h1 class="display">Acme Cloud.<br/>Infraestrutura sem fricção.</h1>
+      </div>
+
+      <div class="meta-row">
+        <span>Produto</span>
+        <span class="dot"></span>
+        <span>Resultados</span>
+        <span class="dot"></span>
+        <span>Próximos passos</span>
+      </div>
+    </section>
+
+    <!-- Agenda -->
+    <section class="slide bg-base" data-screen-label="Agenda" data-category="content">
+      <div class="pg"></div>
+      <p class="eyebrow">Agenda</p>
+      <h1 class="h1" style="margin-top: 24px;">O que vamos cobrir.</h1>
+
+      <div class="agenda">
+        <div class="row">
+          <span class="num">01</span>
+          <div>
+            <div class="item-title">O problema</div>
+            <div class="item-sub">Por que infraestrutura ainda trava times de produto.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">02</span>
+          <div>
+            <div class="item-title">A proposta</div>
+            <div class="item-sub">Três princípios que guiam o Acme Cloud.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">03</span>
+          <div>
+            <div class="item-title">Em números</div>
+            <div class="item-sub">O que medimos em produção no último ano.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">04</span>
+          <div>
+            <div class="item-title">Antes e depois</div>
+            <div class="item-sub">Como o fluxo de deploy muda na prática.</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="num">05</span>
+          <div>
+            <div class="item-title">Próximos passos</div>
+            <div class="item-sub">Como começar uma conversa.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divisor -->
+    <section class="slide bg-dark s-divider" data-screen-label="Divisor · Seção 01" data-category="divider">
+      <div class="pg"></div>
+      <p class="eyebrow">Seção 01 de 03</p>
+      <div class="div-grid">
+        <span class="div-num">01</span>
+        <h1 class="div-title">O problema.</h1>
+      </div>
+      <div class="div-rule"></div>
+    </section>
+
+    <!-- Três cards -->
+    <section class="slide bg-brand" data-screen-label="Três cards" data-category="content">
+      <div class="pg"></div>
+      <p class="eyebrow">A proposta</p>
+      <h1 class="h1" style="margin-top: 24px; max-width: 22ch;">Três princípios. Um produto.</h1>
+
+      <div class="principles">
+        <div class="card">
+          <span class="num">01</span>
+          <h3 class="t">Simples por padrão.</h3>
+          <p class="b">Um comando para subir do zero à produção. Sem YAML de mil linhas, sem console labiríntico.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3 class="t">Previsível na conta.</h3>
+          <p class="b">Preço por uso real, sem surpresa no fim do mês. Você vê o custo antes de aplicar a mudança.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3 class="t">Aberto na saída.</h3>
+          <p class="b">Tudo roda em padrões abertos. Se quiser sair, o código e os dados vão com você.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Big stat -->
+    <section class="slide bg-dark" data-screen-label="Big stat" data-category="data">
+      <div class="pg"></div>
+      <p class="eyebrow">Em números</p>
+
+      <div class="big-stat">
+        <span class="num">99,98%</span>
+        <p class="label">de uptime medido em produção nos últimos doze meses, em todas as regiões.</p>
+      </div>
+
+      <div class="meta-row" style="margin-top: 56px;">
+        <span>Fonte: relatório interno</span>
+        <span class="dot"></span>
+        <span>2025–2026</span>
+      </div>
+    </section>
+
+    <!-- Comparação -->
+    <section class="slide bg-brand" data-screen-label="Comparação" data-category="content">
+      <div class="pg"></div>
+      <p class="eyebrow">Antes e depois</p>
+      <h1 class="h1" style="margin-top: 24px;">Como o deploy muda.</h1>
+
+      <div class="compare">
+        <div class="compare-col">
+          <span class="lab">Antes</span>
+          <h3>Setup manual, frágil.</h3>
+          <ul>
+            <li>Configuração espalhada em vários painéis</li>
+            <li>Deploy depende de uma pessoa específica</li>
+            <li>Rollback é lento e arriscado</li>
+            <li>Custo só aparece na fatura</li>
+          </ul>
+        </div>
+        <div class="compare-col right">
+          <span class="lab">Com Acme Cloud</span>
+          <h3>Fluxo único, reversível.</h3>
+          <ul>
+            <li>Uma definição versionada no repositório</li>
+            <li>Qualquer pessoa do time faz deploy</li>
+            <li>Rollback em um clique</li>
+            <li>Custo estimado antes de aplicar</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="slide bg-dark s-closing" data-screen-label="Contato" data-category="closing">
+      <div class="brand-mark">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="wm">Acme</span>
+      </div>
+
+      <h1 class="display">Vamos conversar?</h1>
+      <p class="body-lg">
+        Conte seu caso — <a href="mailto:contato@acme.example">contato@acme.example</a>
+      </p>
+
+      <div class="meta-row">
+        <span>acme.example</span>
+        <span class="dot"></span>
+        <span>@acmecloud</span>
+        <span class="dot"></span>
+        <span>São Paulo · Brasil</span>
+      </div>
+    </section>
+
+  </deck-stage>
+
+</body>
+</html>
