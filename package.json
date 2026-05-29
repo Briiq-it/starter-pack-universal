@@ -1,0 +1,14 @@
+{
+  "name": "starter-pack-universal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Briiq Slides starter pack — universal design system + layout catalog + example deck. Clone becomes a render-ready tenant repo.",
+  "scripts": {
+    "build:catalog": "node templates/build-catalog.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "node-html-parser": "^6.1.13"
+  }
+}
