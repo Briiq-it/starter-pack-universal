@@ -1,5 +1,104 @@
 {
-  "name": null,
-  "logo_url": null,
-  "favicon_url": null
+  "schema_version": "1.0",
+  "design_system": "universal",
+  "css_tokens_source": "tokens.css",
+  "css_components_source": "components.css",
+  "slide": {
+    "required_classes": ["slide"],
+    "background_classes": [
+      "bg-base",
+      "bg-brand",
+      "bg-brand-2",
+      "bg-dark",
+      "bg-accent"
+    ],
+    "style_modifiers": [
+      "s-cover",
+      "s-divider",
+      "s-quote",
+      "s-chapter",
+      "s-closing"
+    ],
+    "required_attrs": ["data-screen-label"],
+    "data_screen_label_format": "^\\S",
+    "must_have_one_background": true,
+    "modifier_optional": true
+  },
+  "tokens": {
+    "color_prefixes": ["--ink", "--brand", "--accent", "--base", "--black", "--color-"],
+    "translucent_prefixes": ["--surface-", "--border-", "--overlay-"],
+    "type_prefixes": ["--font-", "--fs-"]
+  },
+
+  "color_modes_to_detect": [
+    "hex",
+    "rgb",
+    "rgba",
+    "hsl",
+    "hsla",
+    "hwb",
+    "lab",
+    "lch",
+    "oklab",
+    "oklch",
+    "color()",
+    "color-mix()"
+  ],
+
+  "ignore_color_in": [
+    "data:image/svg+xml",
+    "background-image: url(\"data:"
+  ],
+
+  "translucent_mappings": [],
+
+  "rules": {
+    "hardcoded-color": {
+      "severity": "high",
+      "fixable": true,
+      "description": "Hex color literal in inline style or <style> block. If the hex matches a DS token's value, auto-fix replaces with var(--token-name). Hex with no matching token is a true brand violation and is reported only."
+    },
+    "hardcoded-font": {
+      "severity": "high",
+      "fixable": true,
+      "description": "font-family inline or in <style> block referencing a literal font name. If the literal matches a DS font token's value, auto-fix replaces with var(--token). Must use var(--font-sans) or var(--font-mono) from DS."
+    },
+    "orphan-class": {
+      "severity": "medium",
+      "fixable": false,
+      "description": "Class used on an element that is NOT defined anywhere in the DS CSS. Either rename to a DS class or add the rule to the DS."
+    },
+    "invalid-slide-background": {
+      "severity": "high",
+      "fixable": false,
+      "description": "<section class=\"slide ...\"> missing one of the allowed background_classes."
+    },
+    "invalid-slide-modifier": {
+      "severity": "medium",
+      "fixable": false,
+      "description": "<section> uses an s-<name> class not listed in style_modifiers."
+    },
+    "missing-screen-label": {
+      "severity": "medium",
+      "fixable": false,
+      "description": "<section.slide> missing the data-screen-label attribute."
+    },
+    "malformed-screen-label": {
+      "severity": "low",
+      "fixable": false,
+      "description": "data-screen-label is empty. The viewer prepends the global slide number at render — the attribute should hold just the human title (e.g. \"Capa\")."
+    },
+    "low-contrast": {
+      "severity": "high",
+      "fixable": false,
+      "description": "Text element's resolved color has insufficient contrast against its section's resolved background color. WCAG AA thresholds apply (see contrast_thresholds below). Detected via DS-aware resolution: bg-X class → background hex; cascade of `.bg-X .selector { color: ... }` + inline style → text hex; ratio computed via WCAG relative-luminance formula."
+    }
+  },
+
+  "contrast_thresholds": {
+    "comment": "WCAG AA minimum contrast ratios. text_size_px = computed (or declared) font-size of the element being checked. large_text covers headings and any element flagged large by CSS (≥24px regular OR ≥18.66px bold).",
+    "normal_text": { "min_ratio": 4.5, "applies_when_px_below": 24 },
+    "large_text":  { "min_ratio": 3.0, "applies_when_px_at_or_above": 24 },
+    "large_text_classes": [".display", ".h1", ".h2", ".chapter-title", ".chapter-num", ".div-num", ".div-title", ".name"]
+  }
 }

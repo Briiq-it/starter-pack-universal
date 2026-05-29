@@ -1,0 +1,6 @@
+{
+  "_comment": "Tenant identity — preenchido no onboarding (nome, logo, favicon). Separado de brand.json (que é a config do brand-checker / regras do DS). O dashboard Briiq lê estes campos pra brandar a UI.",
+  "name": null,
+  "logo_url": null,
+  "favicon_url": null
+}

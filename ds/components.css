@@ -1,0 +1,603 @@
+/* ============================================================
+   Briiq Slides — Component / layout CSS (universal starter)
+
+   Consome os tokens de ds/tokens.css. Define o <deck-stage>, a
+   classe .slide (1920×1080), as paletas de fundo (.bg-*), a tipografia
+   de slide e os layouts do catálogo (agenda, comparação, etapas, etc).
+
+   Carregue SEMPRE depois de tokens.css. Tanto o catálogo
+   (templates/index.html) quanto os decks (decks/<slug>/index.html)
+   linkam este arquivo — edite aqui uma vez e tudo se atualiza.
+   ============================================================ */
+
+/* ============================================================
+   Escala de tipo + espaçamento — usados por todo slide.
+   Valores multiplicam por --type-scale.
+   ============================================================ */
+:root {
+  --type-scale: 1;
+
+  --type-display:  calc(184px * var(--type-scale));  /* display da capa */
+  --type-mega:     calc(420px * var(--type-scale));  /* capítulo / big stat */
+  --type-title:    calc(96px  * var(--type-scale));  /* h1 do slide */
+  --type-subtitle: calc(64px  * var(--type-scale));  /* h2 do slide */
+  --type-h3:       calc(44px  * var(--type-scale));  /* sub heading */
+  --type-quote:    calc(120px * var(--type-scale));  /* citação grande */
+  --type-body:     calc(30px  * var(--type-scale));
+  --type-body-lg:  calc(38px  * var(--type-scale));
+  --type-small:    calc(24px  * var(--type-scale));
+  --type-eyebrow:  calc(24px  * var(--type-scale));
+  --type-caps:     calc(24px  * var(--type-scale));
+
+  --pad-x:       100px;
+  --pad-top:     96px;
+  --pad-bottom:  88px;
+  --gap-title:   52px;
+  --gap-item:    28px;
+
+  /* Overlays de paleta — ponto único pra trocar as cores dos slides. */
+  --tw-dark:         var(--ink-900);
+  --tw-brand:        var(--brand-300);
+  --tw-brand-soft:   var(--brand-200);
+  --tw-accent:       var(--accent-400);
+  --tw-base:         var(--base-50);
+  --tw-ink-on-brand: var(--ink-800);
+}
+
+body {
+  margin: 0;
+  background: var(--ink-950);
+  font-family: var(--font-sans);
+}
+deck-stage { --slide-width: 1920px; --slide-height: 1080px; }
+
+/* Cada slide é um <section> filho de <deck-stage> */
+.slide {
+  width: 1920px; height: 1080px;
+  position: relative; overflow: hidden;
+  padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+  display: flex; flex-direction: column;
+  box-sizing: border-box;
+  color: var(--tw-dark);
+  font-family: var(--font-sans);
+}
+
+/* Texto herda da seção .bg-X para que a troca de paleta vire o foreground.
+   Sem isto, h1/p (que fixam color via DS) ficariam escuros sobre fundo escuro. */
+.slide :where(h1, h2, h3, h4, h5, h6, p) { color: inherit; }
+
+/* Backgrounds ----- */
+.bg-base    { background: var(--tw-base);       color: var(--tw-dark); }
+.bg-brand   { background: var(--tw-brand);      color: var(--tw-ink-on-brand); }
+.bg-brand-2 { background: var(--tw-brand-soft); color: var(--tw-ink-on-brand); }
+.bg-dark    { background: var(--tw-dark);       color: var(--brand-100); }
+.bg-accent  { background: var(--tw-accent);     color: var(--ink-950); }
+
+/* Type ----- */
+.display {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--type-display); line-height: 0.98;
+  letter-spacing: -0.025em; margin: 0;
+  text-wrap: balance;
+}
+.h1 {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: var(--type-title); line-height: 1.05;
+  letter-spacing: -0.02em; margin: 0;
+  text-wrap: balance;
+}
+.h2 {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: var(--type-subtitle); line-height: 1.1;
+  letter-spacing: -0.015em; margin: 0;
+}
+.h3 {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: var(--type-h3); line-height: 1.15;
+  letter-spacing: -0.01em; margin: 0;
+}
+.body { font-size: var(--type-body); line-height: 1.45; max-width: 28ch; margin: 0; text-wrap: pretty; }
+.body-lg { font-size: var(--type-body-lg); line-height: 1.4; max-width: 24ch; margin: 0; text-wrap: pretty; }
+.small { font-size: var(--type-small); line-height: 1.4; margin: 0; }
+.eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: var(--type-eyebrow);
+  letter-spacing: 0.16em; text-transform: uppercase;
+  opacity: 0.65; margin: 0;
+}
+
+/* Meta row no rodapé dos slides */
+.meta-row {
+  display: flex; align-items: center; gap: 16px;
+  font-size: var(--type-small);
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+.meta-row .dot {
+  width: 6px; height: 6px; border-radius: 999px;
+  background: currentColor; opacity: 0.6;
+}
+.push { margin-top: auto; }
+
+/* Marca (só na capa + fechamento). Substitua .logo-mark por um <img>/<svg>
+   da sua marca e o texto .wm pelo nome dela. */
+.brand-mark {
+  display: inline-flex; align-items: center; gap: 18px;
+}
+.logo-mark {
+  width: 56px; height: 56px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: currentColor;
+}
+.brand-mark .wm {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 52px; letter-spacing: -0.02em;
+  line-height: 1;
+}
+.brand-mark sup {
+  font-size: 18px; opacity: 0.7;
+  margin-left: 2px;
+}
+
+/* Contador de slide (canto superior direito) */
+.pg {
+  position: absolute; top: var(--pad-top); right: var(--pad-x);
+  font-size: var(--type-small); font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  font-family: var(--font-mono);
+}
+
+/* Placeholder de imagem reutilizável ----- */
+.img-ph {
+  background: var(--pattern-hatch-light);
+  border: 1px dashed var(--border-soft);
+  border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--fg-placeholder);
+  font-size: var(--type-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.bg-dark .img-ph {
+  background: var(--pattern-hatch-dark);
+  border-color: var(--border-soft-brand);
+  color: var(--fg-placeholder-on-dark);
+}
+.bg-brand .img-ph, .bg-brand-2 .img-ph { color: var(--fg-placeholder-on-brand); border-color: var(--border-soft-on-brand); }
+
+/* ============================================================
+   Cores de texto por paleta — o .bg-X controla o contraste.
+   ============================================================ */
+.bg-dark .pg            { color: var(--brand-300); }
+.bg-dark .eyebrow       { color: var(--brand-300); }
+.bg-dark .brand-mark    { color: var(--brand-100); }
+.bg-dark .display       { color: var(--brand-100); }
+.bg-dark .h1            { color: var(--brand-100); }
+.bg-dark .meta-row      { color: var(--brand-300); }
+.bg-dark .chapter-title { color: var(--brand-100); }
+.bg-dark .chapter-sub   { color: var(--brand-300); }
+.bg-dark .name          { color: var(--brand-100); }
+.bg-dark .role          { color: var(--brand-300); }
+.bg-dark .label         { color: var(--brand-100); }
+.bg-dark .body-lg       { color: var(--brand-100); }
+.bg-dark .wm            { color: var(--brand-100); }
+
+.bg-accent .pg          { color: var(--ink-950); }
+.bg-accent .eyebrow     { color: var(--ink-950); }
+.bg-accent .meta-row    { color: var(--ink-950); }
+
+/* Tag inline genérica pra campos de dado */
+.placeholder {
+  font-style: normal;
+  opacity: 0.55;
+}
+
+/* ============================================================
+   Layouts por slide
+   ============================================================ */
+
+/* 01 · Capa */
+.s-cover .display { max-width: 14ch; }
+.s-cover .brand-mark { margin-bottom: var(--gap-title); }
+.s-cover .eyebrow { margin-bottom: 24px; }
+.s-cover .meta-row { margin-top: var(--gap-title); }
+
+/* 02 · Agenda */
+.agenda {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px 96px;
+  margin-top: var(--gap-title);
+  flex: 1; align-content: start;
+}
+.agenda .row {
+  display: grid; grid-template-columns: 120px 1fr;
+  gap: 28px; align-items: baseline;
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+}
+.agenda .num {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 56px; letter-spacing: -0.02em;
+  opacity: 0.35;
+  font-variant-numeric: tabular-nums;
+}
+.agenda .item-title {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 40px; letter-spacing: -0.01em; line-height: 1.1;
+}
+.agenda .item-sub {
+  font-size: 24px; opacity: 0.7; margin-top: 8px; line-height: 1.35;
+}
+
+/* 03 · Divisor pequeno (section divider) */
+.s-divider .div-grid {
+  flex: 1; display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end; gap: 80px;
+}
+.s-divider .div-num {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 220px; line-height: 0.86;
+  letter-spacing: -0.04em;
+  color: var(--tw-brand);
+  font-variant-numeric: tabular-nums;
+}
+/* div-num é um acento sobre fundo escuro; em fundos claros vira escuro pra
+   continuar legível. Seletores compostos (sem espaço) porque ambas as classes
+   vivem no MESMO <section>. */
+.bg-brand.s-divider .div-num,
+.bg-brand-2.s-divider .div-num,
+.bg-base.s-divider .div-num { color: var(--tw-dark); }
+.s-divider .div-title {
+  font-size: 88px; line-height: 1.05; letter-spacing: -0.02em;
+  font-weight: 500;
+  padding-bottom: 24px;
+}
+.s-divider .div-rule {
+  position: absolute; left: var(--pad-x); right: var(--pad-x);
+  bottom: var(--pad-bottom); height: 1px;
+  background: var(--border-soft-brand);
+}
+.bg-brand.s-divider .div-rule,
+.bg-brand-2.s-divider .div-rule { background: var(--border-soft-on-brand); }
+.bg-base.s-divider .div-rule { background: var(--border-soft); }
+
+/* 04 · Sobre nós */
+.about-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 96px;
+  flex: 1; align-items: start;
+  margin-top: var(--gap-title);
+}
+.about-grid .lede {
+  font-size: 38px; line-height: 1.4; max-width: 22ch;
+  text-wrap: pretty;
+}
+.data-list { display: flex; flex-direction: column; gap: 32px; }
+.data-list .item { border-top: 1px solid var(--border); padding-top: 18px; }
+.data-list .k {
+  font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase;
+  opacity: 0.6; margin-bottom: 12px;
+}
+.data-list .v {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 56px; letter-spacing: -0.02em; line-height: 1;
+}
+
+/* 05 · Time */
+.team-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 28px 32px;
+  flex: 1; align-content: start;
+  margin-top: 40px;
+}
+.person { display: flex; flex-direction: column; gap: 14px; }
+.person .ph {
+  height: 208px;
+  border-radius: 18px;
+  background: var(--pattern-hatch-brand-fine);
+  border: 1px solid var(--border-inverse);
+}
+.person.empty .ph { border-style: dashed; opacity: 0.55; }
+.person .name {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 28px; letter-spacing: -0.01em; line-height: 1.15;
+}
+.person .role {
+  font-size: 24px; opacity: 0.7; margin-top: 2px;
+}
+
+/* 06 · Cards — three cards */
+.principles {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  flex: 1; margin-top: var(--gap-title);
+}
+.principles .card {
+  background: var(--surface-glass);
+  border-radius: 28px;
+  padding: 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.principles .card .num {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 64px; letter-spacing: -0.02em; line-height: 1;
+  opacity: 0.45;
+}
+.principles .card .t {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 38px; letter-spacing: -0.01em; line-height: 1.15;
+  margin: 0;
+}
+.principles .card .b {
+  font-size: 24px; line-height: 1.45; opacity: 0.85; margin: 0;
+}
+
+/* 07 · Citação grande */
+.s-quote .display {
+  font-size: var(--type-quote);
+  max-width: 22ch;
+  font-weight: 400;
+  line-height: 1.05;
+}
+.s-quote em {
+  font-style: italic; font-weight: 500;
+}
+.s-quote .display .qmk {
+  display: inline-block;
+  font-style: normal;
+  opacity: 0.4;
+  margin-right: -0.15em;
+}
+.s-quote .meta-row { margin-top: 56px; }
+
+/* 08 · Capítulo grande (big number chapter) */
+.s-chapter { padding: var(--pad-top) var(--pad-x); }
+.chapter-num {
+  display: block;
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--type-mega); line-height: 0.78;
+  letter-spacing: -0.04em;
+  color: var(--tw-brand);
+  margin-left: -20px;
+  margin-bottom: 32px;
+  font-variant-numeric: tabular-nums;
+}
+.bg-brand   .chapter-num,
+.bg-brand-2 .chapter-num,
+.bg-base    .chapter-num { color: var(--tw-dark); }
+.chapter-title {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 112px; letter-spacing: -0.02em; line-height: 1.02;
+  margin: 0;
+}
+.chapter-sub {
+  font-size: 30px; opacity: 0.7; max-width: 30ch; line-height: 1.4;
+  margin-top: 24px;
+}
+
+/* 09 · Texto + imagem */
+.text-img {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  flex: 1; margin-top: var(--gap-title);
+  align-items: stretch;
+}
+.text-img .copy { display: flex; flex-direction: column; gap: 32px; padding: 24px 0; }
+.text-img .copy .body { max-width: 24ch; font-size: 30px; line-height: 1.45; }
+
+/* 10 · Comparação */
+.compare {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: var(--gap-title);
+  flex: 1; min-height: 0;
+}
+.compare-col {
+  background: var(--surface-glass);
+  border-radius: 28px;
+  padding: 56px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.compare-col.right {
+  background: var(--tw-dark);
+  color: var(--brand-100);
+}
+.compare-col.right .lab { color: var(--brand-300); }
+.compare-col .lab {
+  font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase;
+  opacity: 0.75; font-weight: 500;
+}
+.compare-col h3 { font-size: 48px; font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; margin: 0; }
+.compare-col ul { padding: 0; margin: 0; }
+.compare-col li {
+  font-size: 24px; line-height: 1.45;
+  padding-left: 36px; position: relative;
+  list-style: none; margin-bottom: 18px;
+}
+.compare-col li:last-child { margin-bottom: 0; }
+.compare-col li::before {
+  content: ''; position: absolute; left: 0; top: 14px;
+  width: 18px; height: 2px; background: currentColor; opacity: 0.55;
+}
+
+/* 11 · Etapas — bullets numbered */
+.steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: var(--gap-title);
+  flex: 1;
+}
+.step { display: flex; flex-direction: column; gap: 20px; padding-top: 28px; border-top: 1px solid var(--border-soft); }
+.step .n {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 32px; letter-spacing: 0.05em;
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
+}
+.step .t {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 38px; letter-spacing: -0.01em; line-height: 1.15;
+  margin: 0;
+}
+.step .b { font-size: 24px; line-height: 1.45; opacity: 0.8; margin: 0; }
+.step .meta { font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; margin-top: auto; padding-top: 20px; }
+
+/* 12 · Big stat */
+.big-stat {
+  flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
+  gap: 32px;
+}
+.big-stat .num {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--type-mega); line-height: 0.84;
+  letter-spacing: -0.04em;
+  color: var(--tw-brand);
+  font-variant-numeric: tabular-nums;
+  margin-left: -16px;
+}
+.bg-brand .big-stat .num,
+.bg-brand-2 .big-stat .num,
+.bg-base .big-stat .num { color: var(--tw-dark); }
+.big-stat .label {
+  font-size: 38px; line-height: 1.35;
+  max-width: 22ch; opacity: 0.88;
+}
+
+/* 13 · Em números — 3 stats in a row */
+.stat-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: var(--gap-title);
+  flex: 1; align-content: center;
+}
+.stat {
+  display: flex; flex-direction: column; gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-soft);
+}
+.stat .n {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 200px; letter-spacing: -0.04em; line-height: 0.86;
+  font-variant-numeric: tabular-nums;
+}
+.stat .t {
+  font-size: 28px; line-height: 1.35; opacity: 0.8;
+  max-width: 18ch;
+}
+.stat .u {
+  font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* 15 · Case study capa */
+.case-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  flex: 1; margin-top: var(--gap-title);
+}
+.case-grid .copy { display: flex; flex-direction: column; gap: 32px; padding: 16px 0; }
+.case-grid .name {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 88px; letter-spacing: -0.02em; line-height: 1.02;
+  margin: 0;
+}
+.case-grid .lede { font-size: 30px; line-height: 1.45; max-width: 22ch; }
+.case-tags { display: flex; gap: 12px; flex-wrap: wrap; }
+.tag {
+  border: 1px solid var(--border-strong);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 24px;
+  letter-spacing: 0.04em;
+}
+
+/* 16 · Resultados — three big numbers in case */
+.results {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  flex: 1;
+  margin-top: var(--gap-title);
+  align-content: center;
+}
+.result {
+  display: flex; flex-direction: column; gap: 20px;
+  padding: 56px 48px;
+  background: var(--surface-tint-brand);
+  border-radius: 28px;
+}
+.result .n {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 180px; letter-spacing: -0.04em; line-height: 0.86;
+  color: var(--tw-brand);
+  font-variant-numeric: tabular-nums;
+}
+.bg-brand .result .n,
+.bg-brand-2 .result .n,
+.bg-base .result .n { color: var(--tw-dark); }
+.result .t { font-size: 26px; line-height: 1.35; opacity: 0.85; max-width: 16ch; }
+
+/* 18 · Próximos passos */
+.next-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: var(--gap-title);
+  flex: 1;
+}
+.next-card {
+  border: 1px solid var(--border-soft);
+  border-radius: 28px;
+  padding: 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.next-card .n {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 56px; letter-spacing: -0.02em;
+  opacity: 0.45;
+  font-variant-numeric: tabular-nums;
+}
+.next-card .t {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 38px; letter-spacing: -0.01em; line-height: 1.15;
+  margin: 0;
+}
+.next-card .b { font-size: 24px; line-height: 1.45; opacity: 0.85; margin: 0; }
+.next-card .when {
+  font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase;
+  opacity: 0.6; margin-top: auto;
+}
+
+/* 20 · Contato (closing) */
+.s-closing {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+}
+.s-closing .brand-mark { margin-bottom: 80px; }
+.s-closing .display {
+  font-size: 220px;
+  max-width: none;
+}
+.s-closing .body-lg {
+  margin-top: 64px;
+  font-size: 38px;
+  max-width: none;
+  opacity: 0.85;
+}
+.s-closing .body-lg a {
+  color: var(--tw-brand);
+  text-decoration: none;
+  font-weight: 500;
+}
+.bg-brand.s-closing .body-lg a,
+.bg-brand-2.s-closing .body-lg a,
+.bg-base.s-closing .body-lg a { color: var(--tw-dark); }
+.s-closing .meta-row {
+  position: absolute; bottom: var(--pad-bottom); left: 0; right: 0;
+  justify-content: center;
+}
+
+/* Painel de tweaks: esconder em print/screenshot */
+@media print { .twk-panel { display: none !important; } }
