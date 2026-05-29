@@ -1,0 +1,42 @@
+/*
+ * Briiq Slides — Design System tokens (universal starter)
+ *
+ * Estes são valores de PARTIDA neutros/profissionais, pensados para um Tenant
+ * que ainda não tem marca definida. Personalize à vontade: troque cores, fontes,
+ * radius e shadows pelos da sua marca. O Briiq lê este arquivo e aplica os tokens
+ * no dashboard e nos slides gerados.
+ *
+ * Formato: variáveis CSS dentro de :root. O nome da variável (sem o "--") vira o
+ * token (ex.: --color-primary  ->  token "color-primary").
+ */
+:root {
+  /* Cores — paleta neutra universal (ajuste para sua marca) */
+  --color-primary: #4f46e5;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #0ea5e9;
+  --color-accent-foreground: #ffffff;
+
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+
+  /* Tipografia */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Radius + spacing */
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-lg: 0.75rem;
+  --spacing-unit: 0.25rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 20px rgba(15, 23, 42, 0.12);
+}
